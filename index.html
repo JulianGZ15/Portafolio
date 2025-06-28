@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>José Julián González - Ingeniero de Software</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">Julian González</div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="#inicio" class="nav-link">Inicio</a>
+                <a href="#sobre-mi" class="nav-link">Sobre mí</a>
+                <a href="#proyectos" class="nav-link">Proyectos</a>
+                <a href="#logros" class="nav-link">Logros</a>
+                <a href="#contacto" class="nav-link">Contacto</a>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">
+                        <span class="title-name">José Julián</span>
+                        <span class="title-surname">González</span>
+                    </h1>
+                    <h2 class="hero-subtitle">Ingeniero de Software Full Stack</h2>
+                    <div class="hero-location">
+                        <svg class="location-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                            <circle cx="12" cy="10" r="3"></circle>
+                        </svg>
+                        <span>Villahermosa, Tabasco</span>
+                    </div>
+                    <p class="hero-description">
+                        Estudiante de último cuatrimestre en Ingeniería de Software, especializado en desarrollo Full
+                        Stack
+                        con enfoque principal en backend usando Spring Boot. Experiencia sólida en bases de datos y
+                        arquitecturas escalables.
+                    </p>
+                    <div class="hero-buttons">
+                        <button class="btn btn-primary" onclick="scrollToSection('proyectos')">Ver Proyectos</button>
+                        <button class="btn btn-secondary">Descargar CV</button>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="image-container">
+                        <div class="image-border">
+                            <img src="./assets/perfil.jpg" alt="José Julián González" class="profile-image">
+                        </div>
+                        <div class="floating-element floating-1"></div>
+                        <div class="floating-element floating-2"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="sobre-mi" class="about">
+        <div class="container">
+            <div class="section-content fade-in">
+                <h2 class="section-title">Sobre <span class="text-blue">Mí</span></h2>
+
+                <div class="about-grid">
+                    <div class="about-left">
+                        <h3 class="subsection-title">Formación Académica</h3>
+                        <div class="education-card">
+                            <h4>Ingeniería en Software</h4>
+                            <p class="institution">Universidad Politécnica del Centro</p>
+                            <div class="education-status">
+                                <svg class="calendar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                    <line x1="16" y1="2" x2="16" y2="6"></line>
+                                    <line x1="8" y1="2" x2="8" y2="6"></line>
+                                    <line x1="3" y1="10" x2="21" y2="10"></line>
+                                </svg>
+                                <span>Último cuatrimestre</span>
+                            </div>
+                        </div>
+
+                        <h3 class="subsection-title">Especialización</h3>
+                        <p class="specialization-text">
+                            Especializado en desarrollo Full Stack con enfoque principal en backend utilizando Spring
+                            Boot.
+                            Conocimientos sólidos en diseño de bases de datos, normalización, implementación y
+                            reingeniería inversa.
+                            Experiencia con herramientas de desarrollo modernas y metodologías ágiles.
+                        </p>
+                    </div>
+
+                    <div class="about-right">
+                        <h3 class="subsection-title">Habilidades Técnicas</h3>
+                        <div class="skills-container">
+                            <div class="skill-item">
+                                <div class="skill-header">
+                                    <div class="skill-info">
+                                        <svg class="skill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                            stroke-width="2">
+                                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                                            <line x1="8" y1="21" x2="16" y2="21"></line>
+                                            <line x1="12" y1="17" x2="12" y2="21"></line>
+                                        </svg>
+                                        <span>Spring Boot</span>
+                                    </div>
+                                    <span class="skill-percentage">60%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-width="60"></div>
+                                </div>
+                            </div>
+
+                            <div class="skill-item">
+                                <div class="skill-header">
+                                    <div class="skill-info">
+                                        <svg class="skill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                            stroke-width="2">
+                                            <polyline points="16 18 22 12 16 6"></polyline>
+                                            <polyline points="8 6 2 12 8 18"></polyline>
+                                        </svg>
+                                        <span>Angular</span>
+                                    </div>
+                                    <span class="skill-percentage">45%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-width="45"></div>
+                                </div>
+                            </div>
+
+                            <div class="skill-item">
+                                <div class="skill-header">
+                                    <div class="skill-info">
+                                        <svg class="skill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                            stroke-width="2">
+                                            <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                                            <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
+                                            <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+                                        </svg>
+                                        <span>MySQL/PostgreSQL</span>
+                                    </div>
+                                    <span class="skill-percentage">70%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-width="70"></div>
+                                </div>
+                            </div>
+
+                            <div class="skill-item">
+                                <div class="skill-header">
+                                    <div class="skill-info">
+                                        <svg class="skill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                            stroke-width="2">
+                                            <circle cx="12" cy="12" r="10"></circle>
+                                            <line x1="2" y1="12" x2="22" y2="12"></line>
+                                            <path
+                                                d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
+                                            </path>
+                                        </svg>
+                                        <span>Docker</span>
+                                    </div>
+                                    <span class="skill-percentage">30%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-width="30"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="technologies-card">
+                            <h4 class="tech-title">Tecnologías Adicionales</h4>
+                            <div class="tech-tags">
+                                <span class="tech-tag">Git</span>
+                                <span class="tech-tag">Postman</span>
+                                <span class="tech-tag">Docker</span>
+                                <span class="tech-tag">SQL Server</span>
+                                <span class="tech-tag">MySQL</span>
+                                <span class="tech-tag">PostgreSQL</span>
+                                <span class="tech-tag">PrimeNG</span>
+                                <span class="tech-tag">WebRTC</span>
+                                <span class="tech-tag">WebSocket</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="proyectos" class="projects">
+        <div class="container">
+            <h2 class="section-title">Proyectos <span class="text-blue">Destacados</span></h2>
+
+            <div class="projects-container">
+                <!-- FlavorFlow Project -->
+                <div class="project-item fade-in">
+                    <div class="project-content">
+                        <div class="project-text">
+                            <h3 class="project-title">FlavorFlow</h3>
+                            <p class="project-description">
+                                Plataforma integral para la gestión de restaurantes con administración completa de
+                                personal,
+                                mesas, zonas, productos y generación de órdenes.
+                            </p>
+
+                            <div class="project-features">
+                                <h4>Funcionalidades principales:</h4>
+                                <ul class="features-list">
+                                    <li>Administración de personal y puestos</li>
+                                    <li>Gestión de mesas y zonas</li>
+                                    <li>Control de productos e inventario</li>
+                                    <li>Generación de órdenes y comandas</li>
+                                    <li>Dashboard administrativo</li>
+                                </ul>
+                            </div>
+
+                            <div class="project-tech">
+                                <h4>Tecnologías:</h4>
+                                <div class="tech-tags">
+                                    <span class="tech-tag">Spring Boot</span>
+                                    <span class="tech-tag">Angular</span>
+                                    <span class="tech-tag">MySQL</span>
+                                    <span class="tech-tag">Docker</span>
+                                </div>
+                            </div>
+
+                            <div class="project-buttons">
+                                <a href="https://github.com/JulianGZ15/FlavorFlow-Backend">
+                                    <button class="btn btn-primary">
+                                        <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <path
+                                        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                                    </path>
+                                </svg>
+                                Backend
+                            </button>
+                        </a>
+                        <a href="https://github.com/JulianGZ15/FlavorFlow-Frontend">
+                            <button class="btn btn-secondary">
+                                <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path
+                                d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                            </path>
+                        </svg>
+                        Frontend
+                    </button>
+                </a>
+                            </div>
+                        </div>
+
+                        <div class="project-image">
+                            <div class="image-wrapper">
+                                <img src="https://images.pexels.com/photos/958545/pexels-photo-958545.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                                    alt="FlavorFlow" class="project-img">
+                                <div class="image-overlay">
+                                    <svg class="overlay-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                        <polyline points="15,3 21,3 21,9"></polyline>
+                                        <line x1="10" y1="14" x2="21" y2="3"></line>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- NeoLearn Project -->
+                <div class="project-item fade-in">
+                    <div class="project-content reverse">
+                        <div class="project-text">
+                            <h3 class="project-title">NeoLearn</h3>
+                            <p class="project-description">
+                                Plataforma educativa centralizada con funcionalidades avanzadas para la creación y
+                                gestión de cursos online.
+                            </p>
+
+                            <div class="project-features">
+                                <h4>Funcionalidades principales:</h4>
+                                <ul class="features-list">
+                                    <li>Creación y gestión de cursos</li>
+                                    <li>Carga y streaming de videos</li>
+                                    <li>Certificados personalizables</li>
+                                    <li>Sistema de cupones y descuentos</li>
+                                    <li>Clases en vivo con WebRTC</li>
+                                    <li>Chat en tiempo real</li>
+                                </ul>
+                            </div>
+
+                            <div class="project-tech">
+                                <h4>Tecnologías:</h4>
+                                <div class="tech-tags">
+                                    <span class="tech-tag">Spring Boot</span>
+                                    <span class="tech-tag">Angular</span>
+                                    <span class="tech-tag">PrimeNG 19</span>
+                                    <span class="tech-tag">MySQL</span>
+                                    <span class="tech-tag">WebRTC</span>
+                                    <span class="tech-tag">WebSocket</span>
+                                </div>
+                            </div>
+
+                            <div class="project-buttons">
+                                <a href="https://github.com/JulianGZ15/NeoLearn-Backend">
+
+                                    <button class="btn btn-primary">
+                                        <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <path
+                                        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                                    </path>
+                                </svg>
+                                Backend
+                            </button>
+                        </a>
+                        <a href="https://github.com/JulianGZ15/NeoLearn-FrontEnd">
+
+                            <button class="btn btn-secondary">
+                                <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path
+                                d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                            </path>
+                        </svg>
+                        Frontend
+                    </button>
+                </a>
+                            </div>
+                        </div>
+
+                        <div class="project-image">
+                            <div class="image-wrapper">
+                                <img src="https://images.pexels.com/photos/5428836/pexels-photo-5428836.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                                    alt="NeoLearn" class="project-img">
+                                <div class="image-overlay">
+                                    <svg class="overlay-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                        <polyline points="15,3 21,3 21,9"></polyline>
+                                        <line x1="10" y1="14" x2="21" y2="3"></line>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sistema de Ordenamiento Territorial Project -->
+                <div class="project-item fade-in">
+                    <div class="project-content">
+                        <div class="project-text">
+                            <h3 class="project-title">Sistema de Ordenamiento Territorial</h3>
+                            <p class="project-description">
+                                Solución gubernamental para la gestión territorial del municipio de Centro, Tabasco,
+                                automatizando procesos de validación de construcciones.
+                            </p>
+
+                            <div class="project-features">
+                                <h4>Funcionalidades principales:</h4>
+                                <ul class="features-list">
+                                    <li>Validación de construcciones por UGA</li>
+                                    <li>Aplicación de políticas territoriales</li>
+                                    <li>Registro de solicitudes</li>
+                                    <li>Revisión gubernamental automatizada</li>
+                                    <li>Reportes y analytics</li>
+                                </ul>
+                            </div>
+
+                            <div class="project-tech">
+                                <h4>Tecnologías:</h4>
+                                <div class="tech-tags">
+                                    <span class="tech-tag">Spring Boot</span>
+                                    <span class="tech-tag">Angular</span>
+                                    <span class="tech-tag">PrimeNG 19</span>
+                                    <span class="tech-tag">PostgreSQL</span>
+                                </div>
+                            </div>
+
+                            <div class="project-buttons">
+                                <button class="btn btn-primary">
+                                    <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <path
+                                            d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                                        </path>
+                                    </svg>
+                                    Backend
+                                </button>
+                                <button class="btn btn-secondary">
+                                    <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <path
+                                            d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                                        </path>
+                                    </svg>
+                                    Frontend
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="project-image">
+                            <div class="image-wrapper">
+                                <img src="https://images.pexels.com/photos/1109541/pexels-photo-1109541.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                                    alt="Sistema de Ordenamiento Territorial" class="project-img">
+                                <div class="image-overlay">
+                                    <svg class="overlay-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                        <polyline points="15,3 21,3 21,9"></polyline>
+                                        <line x1="10" y1="14" x2="21" y2="3"></line>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievement Section -->
+    <section id="logros" class="achievement">
+        <div class="container">
+            <div class="section-content fade-in">
+                <h2 class="section-title">Logros <span class="text-blue">Destacados</span></h2>
+
+                <div class="achievement-container">
+                    <div class="achievement-card">
+                        <div class="achievement-content">
+                            <div class="achievement-text">
+                                <div class="achievement-header">
+                                    <svg class="award-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <circle cx="12" cy="8" r="7"></circle>
+                                        <polyline points="8.21,13.89 7,23 12,20 17,23 15.79,13.88"></polyline>
+                                    </svg>
+                                    <h3 class="achievement-title">Hackathon Villahermosa 2024</h3>
+                                </div>
+
+                                <p class="achievement-prize">🏆 Primer Lugar - Categoría Contenido Nacional</p>
+                                <p class="achievement-description">
+                                    Evento organizado por AMEXHI y SEDENER, en conjunto con StartupLab MX.
+                                    Junto a mi equipo creamnos una propuesta para el
+                                    desarrollo una plataforma web innovadora basada en certificados electrónicos
+                                    para validar contenido nacional de proveedores ante la Secretaría de Economía.
+                                </p>
+
+                                <div class="achievement-features">
+                                    <h4>Características del proyecto:</h4>
+                                    <ul class="features-list">
+                                        <li>Certificados electrónicos seguros</li>
+                                        <li>Validación automatizada de contenido nacional</li>
+                                        <li>Integración con sistemas gubernamentales</li>
+                                        <li>Dashboard para proveedores y autoridades</li>
+                                    </ul>
+                                </div>
+                                <a href="https://www.amexhi.org/comunicados/amexhi-y-sedener-tabasco-llevan-a-cabo-el-1er-hackathon-tabasco-2024/">
+
+                                    <button class="btn btn-award" >
+                                        <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                        <polyline points="15,3 21,3 21,9"></polyline>
+                                        <line x1="10" y1="14" x2="21" y2="3"></line>
+                                    </svg>
+                                    Ver Nota Periodística
+                                </button>
+                            </a>
+                            </div>
+
+                            <div class="achievement-image">
+                                <img src="./assets/hackathon.jpg"
+                                    alt="Hackathon Villahermosa 2024" class="achievement-img">
+                                <div class="achievement-badge">🏆 1er Lugar</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contacto" class="contact">
+        <div class="container">
+            <div class="section-content fade-in">
+                <h2 class="section-title">Vamos a <span class="text-blue">Conectar</span></h2>
+
+                <p class="contact-description">
+                    ¿Interesado en colaborar en un proyecto o conocer más sobre mi trabajo?
+                    Estoy siempre abierto a nuevas oportunidades y conexiones profesionales.
+                </p>
+
+                <div class="contact-grid">
+                    <div class="contact-card">
+                        <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                            </path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                        <h3>Email</h3>
+                        <p>josejuliangonzalez7@gmail.com</p>
+                    </div>
+
+                    <div class="contact-card">
+                        <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path
+                                d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 3.1 5.18 2 2 0 0 1 5 3h3a2 2 0 0 1 2 1.72 12.05 12.05 0 0 0 .56 2.57 2 2 0 0 1-.45 2.11L9 10a16 16 0 0 0 6 6l.6-.6a2 2 0 0 1 2.11-.45 12.05 12.05 0 0 0 2.57.56A2 2 0 0 1 22 16.92z">
+                            </path>
+                        </svg>
+                        <h3>Teléfono</h3>
+                        <p>+52 993 442 4399</p>
+                    </div>
+
+
+                    <div class="contact-card">
+                        <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path
+                                d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                            </path>
+                        </svg>
+                        <h3>GitHub</h3>
+                        <p>JulianGZ15</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-text">
+                    © 2024 José Julián González Martínez. Todos los derechos reservados.
+                </div>
+                <div class="footer-social">
+                    <a href="https://github.com/JulianGZ15" class="social-link">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path
+                                d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                            </path>
+                        </svg>
+                    </a>
+                    <a href="" class="social-link">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                            </path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
