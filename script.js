@@ -344,7 +344,7 @@ document.addEventListener('DOMContentLoaded', function () {
             // Generar array de imágenes
             const images = [];
             for (let i = 1; i <= totalImages; i++) {
-                images.push(`assets/${projectFolder}/${i}.png`);
+                images.push(`assets/${projectFolder}/${i}.webp`);
             }
             
             // Crear carrusel
