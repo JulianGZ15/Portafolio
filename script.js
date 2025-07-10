@@ -325,7 +325,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
      // ===== CONFIGURACIÓN DE CARRUSEL PERSONALIZADO =====
-    console.log('Iniciando carruseles personalizados...');
+    console.log('Iniciando carruseles personalizados.');
     
     const proyectosConfig = {
         "FlavorFlow": 12,
