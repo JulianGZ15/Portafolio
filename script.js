@@ -7,6 +7,174 @@ function scrollToSection(sectionId) {
         });
     }
 }
+class Carousel {
+    constructor(element, images, autoplayDelay = 3000) {
+        this.carousel = element;
+        this.images = images;
+        this.currentSlide = 0;
+        this.autoplayDelay = autoplayDelay;
+        this.autoplayInterval = null;
+        this.isAutoplayPaused = false;
+        
+        this.init();
+    }
+    
+    init() {
+        this.createSlides();
+        this.createIndicators();
+        this.bindEvents();
+        this.startAutoplay();
+    }
+    
+    createSlides() {
+        const track = this.carousel.querySelector('.carousel-track');
+        track.innerHTML = '';
+        
+        this.images.forEach((imageSrc, index) => {
+            const slide = document.createElement('div');
+            slide.className = 'carousel-slide';
+            
+            const img = document.createElement('img');
+            img.src = imageSrc;
+            img.alt = `Imagen ${index + 1}`;
+            img.loading = 'lazy';
+            
+            img.onerror = () => {
+                console.warn(`No se pudo cargar: ${imageSrc}`);
+                slide.style.display = 'none';
+            };
+            
+            slide.appendChild(img);
+            track.appendChild(slide);
+        });
+    }
+    
+    createIndicators() {
+        const indicatorsContainer = this.carousel.querySelector('.carousel-indicators');
+        indicatorsContainer.innerHTML = '';
+        
+        this.images.forEach((_, index) => {
+            const indicator = document.createElement('div');
+            indicator.className = 'carousel-indicator';
+            if (index === 0) indicator.classList.add('active');
+            
+            indicator.addEventListener('click', () => {
+                this.goToSlide(index);
+            });
+            
+            indicatorsContainer.appendChild(indicator);
+        });
+    }
+    
+    bindEvents() {
+        const prevBtn = this.carousel.querySelector('.carousel-prev');
+        const nextBtn = this.carousel.querySelector('.carousel-next');
+        
+        prevBtn.addEventListener('click', () => {
+            this.prevSlide();
+        });
+        
+        nextBtn.addEventListener('click', () => {
+            this.nextSlide();
+        });
+        
+        // Pausar autoplay al hacer hover
+        this.carousel.addEventListener('mouseenter', () => {
+            this.pauseAutoplay();
+        });
+        
+        this.carousel.addEventListener('mouseleave', () => {
+            this.resumeAutoplay();
+        });
+        
+        // Soporte para touch/swipe en móviles
+        this.addTouchSupport();
+    }
+    
+    addTouchSupport() {
+        let startX = 0;
+        let endX = 0;
+        
+        this.carousel.addEventListener('touchstart', (e) => {
+            startX = e.touches[0].clientX;
+        });
+        
+        this.carousel.addEventListener('touchend', (e) => {
+            endX = e.changedTouches[0].clientX;
+            this.handleSwipe();
+        });
+        
+        const handleSwipe = () => {
+            const diff = startX - endX;
+            const threshold = 50;
+            
+            if (Math.abs(diff) > threshold) {
+                if (diff > 0) {
+                    this.nextSlide();
+                } else {
+                    this.prevSlide();
+                }
+            }
+        };
+        
+        this.handleSwipe = handleSwipe;
+    }
+    
+    goToSlide(index) {
+        this.currentSlide = index;
+        this.updateSlidePosition();
+        this.updateIndicators();
+    }
+    
+    nextSlide() {
+        this.currentSlide = (this.currentSlide + 1) % this.images.length;
+        this.updateSlidePosition();
+        this.updateIndicators();
+    }
+    
+    prevSlide() {
+        this.currentSlide = this.currentSlide === 0 ? this.images.length - 1 : this.currentSlide - 1;
+        this.updateSlidePosition();
+        this.updateIndicators();
+    }
+    
+    updateSlidePosition() {
+        const track = this.carousel.querySelector('.carousel-track');
+        const translateX = -this.currentSlide * 100;
+        track.style.transform = `translateX(${translateX}%)`;
+    }
+    
+    updateIndicators() {
+        const indicators = this.carousel.querySelectorAll('.carousel-indicator');
+        indicators.forEach((indicator, index) => {
+            indicator.classList.toggle('active', index === this.currentSlide);
+        });
+    }
+    
+    startAutoplay() {
+        if (this.images.length <= 1) return;
+        
+        this.autoplayInterval = setInterval(() => {
+            if (!this.isAutoplayPaused) {
+                this.nextSlide();
+            }
+        }, this.autoplayDelay);
+    }
+    
+    pauseAutoplay() {
+        this.isAutoplayPaused = true;
+    }
+    
+    resumeAutoplay() {
+        this.isAutoplayPaused = false;
+    }
+    
+    destroy() {
+        if (this.autoplayInterval) {
+            clearInterval(this.autoplayInterval);
+        }
+    }
+}
 
 document.addEventListener('DOMContentLoaded', function () {
     // Menú hamburguesa
@@ -156,107 +324,42 @@ document.addEventListener('DOMContentLoaded', function () {
         }, 1000);
     }
 
-    // ===== CONFIGURACIÓN DE SWIPER =====
-    console.log('Iniciando configuración de Swiper...');
-
+     // ===== CONFIGURACIÓN DE CARRUSEL PERSONALIZADO =====
+    console.log('Iniciando carruseles personalizados...');
+    
     const proyectosConfig = {
         "FlavorFlow": 12,
         "NeoLearn": 9,
         "Ordenamiento": 3
     };
-
+    
+    const carousels = [];
+    
     Object.keys(proyectosConfig).forEach(nombreProyecto => {
-        console.log(`Procesando proyecto: ${nombreProyecto}`);
-
         const projectFolder = nombreProyecto.toLowerCase();
-        const container = document.querySelector(`.swiper[data-project="${nombreProyecto}"]`);
+        const container = document.querySelector(`.carousel[data-project="${nombreProyecto}"]`);
         const totalImages = proyectosConfig[nombreProyecto];
-
+        
         if (container) {
-            // Limpiar container
-            container.innerHTML = '';
-
-            const wrapper = document.createElement("div");
-            wrapper.className = "swiper-wrapper";
-
+            // Generar array de imágenes
+            const images = [];
             for (let i = 1; i <= totalImages; i++) {
-                const slide = document.createElement("div");
-                slide.className = "swiper-slide";
-
-                const img = document.createElement("img");
-                img.src = `assets/${projectFolder}/${i}.png`;
-                img.alt = `${nombreProyecto} imagen ${i}`;
-                img.loading = "lazy"; // Carga perezosa
-
-                img.onerror = function () {
-                    console.warn(`No se pudo cargar: ${this.src}`);
-                    this.style.display = 'none';
-                };
-
-                slide.appendChild(img);
-                wrapper.appendChild(slide);
+                images.push(`assets/${projectFolder}/${i}.png`);
             }
-
-            container.appendChild(wrapper);
-
-            // Controles
-            const next = document.createElement("div");
-            next.className = "swiper-button-next";
-            const prev = document.createElement("div");
-            prev.className = "swiper-button-prev";
-            const pagination = document.createElement("div");
-            pagination.className = "swiper-pagination";
-
-            container.appendChild(next);
-            container.appendChild(prev);
-            container.appendChild(pagination);
-
-            // Inicializar Swiper
-            try {
-                // Inicializar Swiper con configuración anti-zoom
-                const swiper = new Swiper(container, {
-                    loop: totalImages > 1,
-                    autoplay: {
-                        delay: 3000,
-                        disableOnInteraction: false,
-                        pauseOnMouseEnter: true,
-                    },
-                    pagination: {
-                        el: pagination,
-                        clickable: true,
-                        dynamicBullets: true,
-                    },
-                    navigation: {
-                        nextEl: next,
-                        prevEl: prev,
-                    },
-                    slidesPerView: 1,
-                    spaceBetween: 0,
-                    speed: 500,
-                    effect: 'slide',
-                    grabCursor: true,
-                    preventClicks: true,
-                    preventClicksPropagation: true,
-                    // ✅ Configuraciones para evitar zoom automático
-                    zoom: false,
-                    freeMode: false,
-                    watchSlidesProgress: false,
-                    watchSlidesVisibility: false,
-                });
-
-                // ✅ Desactivar cualquier evento de zoom
-                swiper.on('touchStart', function () {
-                    this.allowTouchMove = true;
-                });
-
-                swiper.on('touchEnd', function () {
-                    this.allowTouchMove = true;
-                });
-
-            } catch (error) {
-                console.error(`❌ Error inicializando Swiper:`, error);
-            }
+            
+            // Crear carrusel
+            const carousel = new Carousel(container, images, 3000);
+            carousels.push(carousel);
+            
+            console.log(`✅ Carrusel creado para ${nombreProyecto}`);
+        } else {
+            console.error(`❌ No se encontró container para: ${nombreProyecto}`);
         }
+    });
+    
+    // Limpiar carruseles al salir de la página
+    window.addEventListener('beforeunload', () => {
+        carousels.forEach(carousel => carousel.destroy());
     });
 
 }); // ✅ CIERRE CORRECTO DEL DOMContentLoaded
