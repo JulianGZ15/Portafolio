@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 </head>
 
 <body>
@@ -57,7 +58,9 @@
                     </p>
                     <div class="hero-buttons">
                         <button class="btn btn-primary" onclick="scrollToSection('proyectos')">Ver Proyectos</button>
-                        <button class="btn btn-secondary">Descargar CV</button>
+                        <a href="https://drive.google.com/file/d/1eiluWmjdGpbG3CKT5L0sz8jq1gFCzRC1/view">
+                            <button class="btn btn-secondary">Descargar CV</button>
+                        </a>
                     </div>
                 </div>
                 <div class="hero-image">
@@ -144,8 +147,7 @@
                                 <div class="skill-header">
                                     <div class="skill-info">
                                         <!-- Microsoft SQL Server (usamos Microsoft como base) -->
-                                        <img class="skill-icon"
-                                            src="https://cdn.simpleicons.org/mysql/CC2927"
+                                        <img class="skill-icon" src="https://cdn.simpleicons.org/mysql/CC2927"
                                             alt="SQL Server Logo" />
                                         <span>Base de datos SQL</span>
                                     </div>
@@ -256,18 +258,7 @@
                         </div>
 
                         <div class="project-image">
-                            <div class="image-wrapper">
-                                <img src="https://images.pexels.com/photos/958545/pexels-photo-958545.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                                    alt="FlavorFlow" class="project-img">
-                                <div class="image-overlay">
-                                    <svg class="overlay-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                        stroke-width="2">
-                                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                                        <polyline points="15,3 21,3 21,9"></polyline>
-                                        <line x1="10" y1="14" x2="21" y2="3"></line>
-                                    </svg>
-                                </div>
-                            </div>
+                            <div class="swiper mySwiper" data-project="FlavorFlow"></div>
                         </div>
                     </div>
                 </div>
@@ -335,18 +326,7 @@
                         </div>
 
                         <div class="project-image">
-                            <div class="image-wrapper">
-                                <img src="https://images.pexels.com/photos/5428836/pexels-photo-5428836.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                                    alt="NeoLearn" class="project-img">
-                                <div class="image-overlay">
-                                    <svg class="overlay-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                        stroke-width="2">
-                                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                                        <polyline points="15,3 21,3 21,9"></polyline>
-                                        <line x1="10" y1="14" x2="21" y2="3"></line>
-                                    </svg>
-                                </div>
-                            </div>
+                            <div class="swiper mySwiper" data-project="NeoLearn"></div>
                         </div>
                     </div>
                 </div>
@@ -407,19 +387,9 @@
                         </div>
 
                         <div class="project-image">
-                            <div class="image-wrapper">
-                                <img src="https://images.pexels.com/photos/1109541/pexels-photo-1109541.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                                    alt="Sistema de Ordenamiento Territorial" class="project-img">
-                                <div class="image-overlay">
-                                    <svg class="overlay-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                        stroke-width="2">
-                                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                                        <polyline points="15,3 21,3 21,9"></polyline>
-                                        <line x1="10" y1="14" x2="21" y2="3"></line>
-                                    </svg>
-                                </div>
-                            </div>
+                            <div class="swiper mySwiper" data-project="Ordenamiento"></div>
                         </div>
+
                     </div>
                 </div>
             </div>
@@ -567,6 +537,9 @@
     </footer>
 
     <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 </body>
+
+
 
 </html>
